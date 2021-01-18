@@ -10,7 +10,7 @@ class TextInputRow extends Polymer.Element {
           autoValidate="[[pattern]]"
           pattern="[[pattern]]"
           type="[[mode]]"
-          on-change="valueChanged"
+          on-input="valueChanged"
           id="textinput"
           placeholder=""
         ></paper-input>
@@ -40,8 +40,8 @@ class TextInputRow extends Polymer.Element {
   }
 
   computeStateName(stateObj){
-    return stateObj.attributes.friendly_name === undefined 
-    ? this.computeObjectId(stateObj.entity_id).replace(/_/g, " ") 
+    return stateObj.attributes.friendly_name === undefined
+    ? this.computeObjectId(stateObj.entity_id).replace(/_/g, " ")
     : stateObj.attributes.friendly_name || "";
   }
 
